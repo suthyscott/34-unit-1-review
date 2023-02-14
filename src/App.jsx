@@ -4,21 +4,19 @@ import Profile from './components/Profile';
 const App = () => {
   const user = {
     firstName: 'Scott',
-    lastName: 'Sutherland',
-    favColor: 'blue',
+    lastName: 'Sutherland'
   }
 
   const userTwo = {
     firstName: 'Kyle',
-    lastName: 'Baugh',
-    favColor: 'black'
+    lastName: 'Baugh'
   }
 
 
   return (
     <div>
-      <Profile info={user} isMe={true} string={'this is a string'} />
-      <Profile info={userTwo} isMe={false}/>
+      <Profile info={user} />
+      <Profile info={userTwo} />
     </div>
   );
 }
