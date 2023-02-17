@@ -33,19 +33,29 @@ const App = () => {
     }
 
     const deleteProfile = index => {
-        console.log('hit deleteProfile', index)
+        console.log("hit deleteProfile", index)
         profiles.splice(index, 1)
-        //This works because if you set a state value to be itself it won't register that any change has taken place, even if you've altered that array. You have to set it to be a new array and then spread in the spliced profiles array. 
+        //This works because if you set a state value to be itself it won't register that any change has taken place, even if you've altered that array. You have to set it to be a new array and then spread in the spliced profiles array.
         setProfiles([...profiles])
     }
-    console.log('its a render')
+    console.log("its a render")
     const profilesDisplay = profiles.map((profileObj, index) => {
-        return <Profile info={profileObj} key={profileObj.lastName} deleteFunction={deleteProfile}  index={index}/>
+        return (
+            <Profile
+                info={profileObj}
+                key={profileObj.lastName}
+                deleteFunction={deleteProfile}
+                index={index}
+            />
+        )
     })
 
     return (
         <div>
-            {profilesDisplay}
+            <div className="profiles-container">
+                {profilesDisplay}
+            </div>
+
             {/* {profiles.map(profileObj => {
                 console.log(profileObj)
                 return <Profile info={profileObj} />
